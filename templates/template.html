@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!--Bootstrap, fontawesome and Local CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    
+    <meta charset="utf-8">
+
+    <!-- Title Block -->
+    <title>{% block title %}{% endblock %}</title>
+
+  </head>
+  <body>
+
+    <!-- All content in Bootstrap Container -->
+    <div class="container text-center">
+
+      <!-- Example sub block, default: "display:none;" -->
+      <div class="sub">
+        {% block sub %}
+        {% endblock %}
+      </div>
+
+      <!-- Main block of page -->
+      <div id="main">
+        {% block main %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <!-- Default footer -->
+    <footer class="text-center">
+        {% block footer %}{% endblock %}
+    </footer>
+
+    <!--SVG.js, Jquery, SocketIO and local Javascript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.6/svg.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    
+  </body>
+
+</html>

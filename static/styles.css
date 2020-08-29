@@ -1,0 +1,13 @@
+footer {
+    background-color: rgba(241, 242, 242, 0.8);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: black;
+}
+
+.sub
+{
+  display: none;
+}
