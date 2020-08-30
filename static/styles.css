@@ -87,6 +87,29 @@ ul {
   color: #4d4d4d;
 }
 
+.doc-inside {
+  width: 80%;
+  margin-left: 20px;
+}
+
+.docs-div {
+  height: calc(100vh - 71px);
+}
+
+.sidebar-header {
+  color: #bbbbbb;
+  opacity: 80%;
+  font-weight: bold;
+}
+
+#sidebar {
+  border-right: 1px solid lightgrey;
+  overflow-y: scroll;
+}
+
+#docs-col {
+  overflow-y: scroll;
+}
 
 #email-form-input {
   box-shadow: 4px 5px 13px #b8b8b8;

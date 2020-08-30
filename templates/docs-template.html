@@ -24,29 +24,41 @@
         </a>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 sidebar">
+    <div class="container-fluid docs-div overflow-auto">
+      <div class="row h-100">
+        <div class="col-3 h-100" id="sidebar">
           <br>
           <br>
           <ul class="list-group">
             {% for doc in docs %}
             <li class="list-group-item border-0">
-              {% if doc[2] %}
-              <span class="selected-sidebar-item">
-                {{ doc[1] }}
-              </span>
+              {% if doc[0]=="s" %}
+                <span class="selected-sidebar-item">
+                  {{ doc[1] }}
+                </span>
+              {% elif doc[0]=="h" %}
+                <span class="sidebar-header">
+                  {{ doc[1] }}
+                </span>
+              {% elif doc[0]=="" %}
+                <span><span>
               {% else %}
-              <a class="unselected-sidebar-item" href="/docs/{{ doc[0] }}">
-                {{ doc[1] }}
-              </a>
+                <a class="unselected-sidebar-item" href="/docs/{{ doc[2] }}">
+                  {{ doc[1] }}
+                </a>
               {% endif %}
             </li>
             {% endfor %}
           </ul>
         </div>
-        <div class="col-9">
-          {% block doc %}{% endblock %}
+        <div class="col-9 h-100" id="docs-col">
+          <br>
+          <br>
+          <div class="container-fluid">
+            <div class="doc-inside">
+              {% block doc %}{% endblock %}
+            </div>
+          </div>
         </div>
       </div>
     </div>

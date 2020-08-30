@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import subprocess
 import os
 
@@ -10,21 +10,34 @@ app.config['SECRET_KEY'] = "DefaultSecret"
 def index():
     return render_template("index.html")
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("docs/404.html", docs=get_docs())
+
 @app.route("/docs/")
 def docs_index():
     return render_template("docs/introduction.html", docs=get_docs(""))
 
 @app.route("/docs/<doc>")
 def docs(doc):
-    return render_template(f"docs/{doc}.html", docs=get_docs(doc))
+    try:
+        return render_template(f"docs/{doc}.html", docs=get_docs(selected=doc))
+    except:
+        return redirect('/docs/')
 
-def get_docs(selected):
+def get_docs(selected=None):
     docs = [
-        ["", "Introduction"],
-        ["rep-based-studying", "Rep Based Studying"],
-        ["about-us", "About Us"]
+        ["h", "OVERVIEW", ""],
+        ["d", "Introduction", ""],
+        ["d", "Rep Based Studying", "rep-based-studying"],
+        ["d", "About Us", "about-us"],
     ]
-    return [x + [x[0]==selected] for x in docs]
+    if selected:
+        for d in docs:
+            if d[0] == "d" and d[2] == selected:
+                d[0] = "s"
+                break
+    return docs
 
 # Run Flask if file is interpreted
 if __name__ == "__main__":
