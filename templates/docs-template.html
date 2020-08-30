@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!--Bootstrap, Animate.css, and Local CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+    <meta charset="utf-8">
+
+    <!-- Title Block -->
+    <title>{% block title %}{% endblock %}</title>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div>
+        <a class="nav-image" href="/">
+          <img src="{{ url_for('static', filename='images/logo.svg') }}" height="40px" class="align-middle ml-2 mr-1">
+        </a>
+        <a class="nav-image" href="/docs">
+          <img src="{{ url_for('static', filename='images/docs.svg') }}" height="18px" class="align-middle">
+        </a>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-9">
+          {% block data %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <!--Jquery, Popper.js, and local Javascript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+  </body>
+
+</html>
