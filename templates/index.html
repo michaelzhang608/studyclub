@@ -1,15 +1,128 @@
 {% extends "template.html" %}
 
-{% block title %} index {% endblock %}
+{% block title %} Studyclub {% endblock %}
 
 {% block main %}
-  <h1>index</h1>
+  <div class="container text-center">
+    <br>
+    <img id="logo" src="{{ url_for('static', filename='images/logo.svg') }}">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row flex-nowrap">
+      <div class="col">
+        <h1 id="title">Casual rep<span>&#8209;</span>based study groups</h1>
+        <h3 id="subtitle">Study. Socialize. Repeat.</h3>
+        <br>
+        <form id="email-form">
+          <div class="input-group" id="email-form-input">
+            <input type="text" class="form-control" placeholder="School email address">
+            <div class="input-group-append">
+              <button class="btn signup-button" type="button">Sign Up</button>
+            </div>
+          </div>
+        </form>
+        <br>
+        <form>
+          <p>Already have an account? <a href="#">Sign in</a></p>
+        </form>
+      </div>
+      <div class="col">
+        <img id="main-image" src="{{ url_for('static', filename='images/main.svg') }}">
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="container-fluid" id="section2-div">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <br>
+          <br>
+          <br>
+          <h1 id="secondtitle">How Studyclub works</h1>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img class="info-image" src="{{ url_for('static', filename='images/info-1.svg') }}">
+          <br>
+          <br>
+          <h4 class="info-text">Tell us your school, your degree program, and your interests</h4>
+        </div>
+        <div class="col">
+          <img class="info-image" src="{{ url_for('static', filename='images/info-2.svg') }}">
+          <br>
+          <br>
+          <h4 class="info-text">Each week, our AI will pair you with two other relevant students</h4>
+        </div>
+        <div class="col">
+          <img class="info-image" src="{{ url_for('static', filename='images/info-3.svg') }}">
+          <br>
+          <br>
+          <h4 class="info-text">Video chat with your group and do rep-based studying</h4>
+          <a href="#">(more info)</a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="container text-center">
+    <h1 id="thirdtitle">Currently only open to students from:</h1>
+    <br>
+    <table>
+      <tr>
+        <td class="align-bottom uni-td">
+          <a class="uni-a" href="#">
+            <img class="uni-image" src="{{ url_for('static', filename='images/queenslogo.png') }}">
+            <h4 class="uni-name">Queen's University</h4>
+          </a>
+        </td>
+        <td class="align-bottom uni-td">
+          <a class="uni-a" href="#">
+            <img class="uni-image" src="{{ url_for('static', filename='images/waterloologo.png') }}">
+            <h4 class="uni-name">University of Waterloo</h4>
+          </a>
+        </td>
+        <td class="align-bottom uni-td">
+          <a class="uni-a" href="#">
+            <img class="uni-image" src="{{ url_for('static', filename='images/westernlogo.png') }}">
+            <h4 class="uni-name">Western Univeristy</h4>
+          </a>
+        </td>
+        <td class="align-bottom uni-td">
+          <a class="uni-a" href="#">
+            <img class="uni-image" src="{{ url_for('static', filename='images/uottawalogo.png') }}">
+            <h4 class="uni-name">University of Ottawa</h4>
+          </a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <form id="email-form2">
+      <div class="input-group" id="email-form2-input" style="width: 30%;">
+        <input type="text" class="form-control" placeholder="School email address">
+        <div class="input-group-append">
+          <button class="btn signup-button" type="button">Sign Up</button>
+        </div>
+      </div>
+    </form>
 
-  
-{% endblock %}
+  </div>
 
-{% block sub %}
-  <h2>Hidden for now</h2>
 {% endblock %}
 
 {% block footer %}

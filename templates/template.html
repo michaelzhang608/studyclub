@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
 
-    <!--Bootstrap, fontawesome and Local CSS-->
+    <!--Bootstrap, Animate.css, and Local CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
-    
+
     <meta charset="utf-8">
 
     <!-- Title Block -->
@@ -15,33 +15,13 @@
   </head>
   <body>
 
-    <!-- All content in Bootstrap Container -->
-    <div class="container text-center">
+    {% block main %}{% endblock %}
 
-      <!-- Example sub block, default: "display:none;" -->
-      <div class="sub">
-        {% block sub %}
-        {% endblock %}
-      </div>
-
-      <!-- Main block of page -->
-      <div id="main">
-        {% block main %}
-        {% endblock %}
-      </div>
-    </div>
-
-    <!-- Default footer -->
-    <footer class="text-center">
-        {% block footer %}{% endblock %}
-    </footer>
-
-    <!--SVG.js, Jquery, SocketIO and local Javascript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.6/svg.js"></script>
+    <!--Jquery, Popper.js, and local Javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
-    
+
   </body>
 
 </html>

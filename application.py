@@ -1,19 +1,14 @@
 from flask import Flask, render_template, request
 import os
-from flask_socketio import SocketIO
 import subprocess
 
 # Flask setup
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "DefaultSecret"
-socketio = SocketIO(app)
-
 
 @app.route("/")
 def index():
     return render_template("index.html")
-
-
 
 # Run Flask if file is interpreted
 if __name__ == "__main__":
