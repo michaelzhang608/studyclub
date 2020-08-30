@@ -10,6 +10,10 @@ app.config['SECRET_KEY'] = "DefaultSecret"
 def index():
     return render_template("index.html")
 
+@app.route("/docs")
+def docs():
+    return render_template("docs.html")
+
 # Run Flask if file is interpreted
 if __name__ == "__main__":
     os.environ["FLASK_APP"] = "application.py"

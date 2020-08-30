@@ -83,6 +83,7 @@
   <div class="container text-center">
     <h1 id="thirdtitle">Currently only open to students from:</h1>
     <br>
+    <br>
     <table>
       <tr>
         <td class="align-bottom uni-td">
@@ -112,6 +113,7 @@
       </tr>
     </table>
     <br>
+    <br>
     <form id="email-form2">
       <div class="input-group" id="email-form2-input" style="width: 30%;">
         <input type="text" class="form-control" placeholder="School email address">
@@ -119,12 +121,24 @@
           <button class="btn signup-button" type="button">Sign Up</button>
         </div>
       </div>
+      <br>
+      <br>
     </form>
-
   </div>
-
-{% endblock %}
-
-{% block footer %}
-  <p>Created by you</p>
+  <div id="section3-div" class="container-fluid text-center">
+    <br>
+    <br>
+    <table style="width: 100%;">
+      <tr>
+        <td>
+          <img id="logo" class="float-left align-middle ml-5" src="{{ url_for('static', filename='images/logo.svg') }}">
+        </td>
+        <td>
+          <a href="#" class="float-right align-middle mr-5">find out when Studyclub will be open to your school</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+  </div>
 {% endblock %}
