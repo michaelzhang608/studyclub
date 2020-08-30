@@ -26,11 +26,27 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3">
-
+        <div class="col-3 sidebar">
+          <br>
+          <br>
+          <ul class="list-group">
+            {% for doc in docs %}
+            <li class="list-group-item border-0">
+              {% if doc[2] %}
+              <span class="selected-sidebar-item">
+                {{ doc[1] }}
+              </span>
+              {% else %}
+              <a class="unselected-sidebar-item" href="/docs/{{ doc[0] }}">
+                {{ doc[1] }}
+              </a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
         </div>
         <div class="col-9">
-          {% block data %}{% endblock %}
+          {% block doc %}{% endblock %}
         </div>
       </div>
     </div>

@@ -8,6 +8,10 @@ a {
   font-weight: bold;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .uni-td {
   width: 25%;
   height: 100%;
@@ -73,6 +77,16 @@ a {
 .nav-image:hover {
   opacity: 70%;
 }
+
+.selected-sidebar-item {
+  color: #FF5555;
+  font-weight: bold;
+}
+
+.unselected-sidebar-item {
+  color: #4d4d4d;
+}
+
 
 #email-form-input {
   box-shadow: 4px 5px 13px #b8b8b8;
