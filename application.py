@@ -23,7 +23,7 @@ def docs(doc):
     try:
         return render_template(f"docs/{doc}.html", docs=get_docs(selected=doc))
     except:
-        return redirect('/docs/')
+        return render_template("docs/404.html", docs=get_docs())
 
 def get_docs(selected=None):
     docs = [
@@ -32,11 +32,10 @@ def get_docs(selected=None):
         ["d", "Rep Based Studying", "rep-based-studying"],
         ["d", "About Us", "about-us"],
     ]
-    if selected:
-        for d in docs:
-            if d[0] == "d" and d[2] == selected:
-                d[0] = "s"
-                break
+    for d in docs:
+        if d[0] == "d" and d[2] == selected:
+            d[0] = "s"
+            break
     return docs
 
 # Run Flask if file is interpreted
