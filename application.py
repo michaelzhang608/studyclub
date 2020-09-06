@@ -10,6 +10,10 @@ app.config['SECRET_KEY'] = "DefaultSecret"
 def index():
     return render_template("index.html")
 
+@app.route("/register", methods=["POST"])
+def register():
+    return request.form.get('email')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("docs/404.html", docs=get_docs())

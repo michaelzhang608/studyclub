@@ -16,11 +16,11 @@
         <h1 id="title">Casual rep<span>&#8209;</span>based study groups</h1>
         <h3 id="subtitle">Study. Socialize. Repeat.</h3>
         <br>
-        <form id="email-form">
+        <form action="/register" class="register-form" method="post" id="email-form">
           <div class="input-group" id="email-form-input">
-            <input type="text" class="form-control" placeholder="School email address">
+            <input name="email" id="email-form-val" type="email" class="form-control" placeholder="School email address" required>
             <div class="input-group-append">
-              <button class="btn signup-button" type="button">Sign Up</button>
+              <button class="btn signup-button" type="submit">Sign Up</button>
             </div>
           </div>
         </form>
@@ -114,11 +114,11 @@
     </table>
     <br>
     <br>
-    <form id="email-form2">
+    <form class="register-form" action="/register" method="post" id="email-form2">
       <div class="input-group" id="email-form2-input" style="width: 30%;">
-        <input type="text" class="form-control" placeholder="School email address">
+        <input type="email" name="email" id="email-form-val2" class="form-control" placeholder="School email address" required>
         <div class="input-group-append">
-          <button class="btn signup-button" type="button">Sign Up</button>
+          <button class="btn signup-button" type="submit">Sign Up</button>
         </div>
       </div>
       <br>
