@@ -10,9 +10,19 @@ app.config['SECRET_KEY'] = "DefaultSecret"
 def index():
     return render_template("index.html")
 
+schools = {
+  "queensu.ca": "Queen's University",
+  "uottawa.ca": "the University of Ottawa",
+  "uwo.ca": "Western University",
+  "edu.uwaterloo.ca": "the University of Waterloo"
+}
+
 @app.route("/register", methods=["POST"])
 def register():
-    return request.form.get('email')
+    email = request.form.get('email')
+    with open("registrations.csv", "a+") as f:
+        f.write("\n" + email)
+    return render_template("docs/registration-success.html", school=schools[email.split("@")[1]], email=email)
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -34,6 +44,7 @@ def get_docs(selected=None):
         ["h", "OVERVIEW", ""],
         ["d", "Introduction", ""],
         ["d", "Rep Based Studying", "rep-based-studying"],
+        ["d", "When will Studyclub be open to your school?", "when-will-studyclub-be-open-to-your-school"],
         ["d", "About Us", "about-us"],
     ]
     for d in docs:
