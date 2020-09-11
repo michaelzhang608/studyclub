@@ -14,6 +14,7 @@ schools = {
   "queensu.ca": "Queen's University",
   "uottawa.ca": "the University of Ottawa",
   "uwo.ca": "Western University",
+  "ivey.ca": "Western University",
   "edu.uwaterloo.ca": "the University of Waterloo"
 }
 

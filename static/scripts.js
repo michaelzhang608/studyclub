@@ -2,6 +2,7 @@ var schoolEmails = [
   "queensu.ca",
   "uottawa.ca",
   "uwo.ca",
+  "ivey.ca",
   "edu.uwaterloo.ca"
 ];
 
