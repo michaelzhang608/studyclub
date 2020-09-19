@@ -23,7 +23,7 @@ def register():
     email = request.form.get('email')
     with open("registrations.csv", "a+") as f:
         f.write("\n" + email)
-    return render_template("docs/registration-success.html", school=schools[email.split("@")[1]], email=email)
+    return render_template("docs/registration-success.html", school=schools[email.split("@")[1]], email=email, docs=get_docs())
 
 @app.errorhandler(404)
 def page_not_found(e):
