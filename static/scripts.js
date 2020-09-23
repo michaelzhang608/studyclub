@@ -41,16 +41,21 @@ function onSubmitForm(emailInputId) {
   }
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
+  updateSize();
+
   document.querySelector("#email-form").onsubmit = onSubmitForm("#email-form-val");
   document.querySelector("#email-form2").onsubmit = onSubmitForm("#email-form-val2");
 
-  $(window).on('resize', function() {
-      if(window.innerWidth < 770) {
-          document.querySelector("#wrapper").className = "flex-row";
-      } else {
-          document.querySelector("#wrapper").className = "row";
-      }
-  })
+  $(window).on('resize', updateSize)
 
 })
+
+function updateSize() {
+  if(window.innerWidth < 770) {
+      document.querySelector("#wrapper").className = "flex-row";
+  } else {
+      document.querySelector("#wrapper").className = "row";
+  }
+}
